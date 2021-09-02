@@ -5,21 +5,23 @@ let node1 = document.getElementById("node1");
 node1.textContent = "I used the getElementById(`node1`) method to access this";
 
 // Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" */
-let node2 = document.getElementsByClassName("node2")
-node2[0].textContent = "I used the getElementsByClassName(\"node2\") method to access this";
+let node2 = document.getElementsByClassName("node2");
+node2[0].textContent =
+  'I used the getElementsByClassName("node2") method to access this';
 // Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" */
-let h3 = document.getElementsByTagName("h3")
+let h3 = document.getElementsByTagName("h3");
 
-for (element of h3) 
-{
-    element.textContent = "I used the getElementByTagName(\"h3\") method to access all of these";
+for (element of h3) {
+  element.textContent =
+    'I used the getElementByTagName("h3") method to access all of these';
 }
 
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Create a paragraph element using this element.createElement() and put this text inside "This node was created using the createElement() method"
 let newElement = document.createElement("p");
-newElement.textContent = "This node was created using the createElement() method";
+newElement.textContent =
+  "This node was created using the createElement() method";
 
 // TODO: Append the created node to the parent node using the element.appendChild() method
 let parent = document.getElementsByClassName("exercise2");
@@ -46,33 +48,26 @@ let newElement3 = document.createElement("p");
 
 newElement3.textContent = "New Child Node";
 
-
-
 ex3.replaceChild(newElement3, oldChild);
 // TODO: Remove the "New Child Node"
-setTimeout(function () 
-{
-    ex3.removeChild(newElement3);    
+setTimeout(function () {
+  ex3.removeChild(newElement3);
 }, 3000);
 
 /*----------- Exercise #4: ANIMATIONS ----------- */
 
 // TODO: Write your JavaScript here to make the red box go from right to left
 let box = document.getElementById("box");
-let conatainer = document.getElementById("container");
+let container = document.getElementById("container");
 let posX = 0;
 
-function moveBox() 
-{   
-    if(posX <= conatainer.offsetWidth - box.offsetWidth)
-    {
-        box.style.left = posX + "px";
-        posX++;
-    }
-    else
-    {
-        clearInterval()
-    }   
+function moveBox() {
+  if (posX <= container.offsetWidth - box.offsetWidth) {
+    box.style.left = posX + "px";
+    posX++;
+  } else {
+    clearInterval();
+  }
 }
 
 setInterval(moveBox, 100);
@@ -81,16 +76,15 @@ setInterval(moveBox, 100);
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
 // TODO: write a function called "show" which creates a new div with an alerting message to the user with this message -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
-function show() 
-{
-    let modal = document.createElement("div");    
-    let modalP = document.createElement("p");
-    let modalButton = document.createElement("button");
+function show() {
+  let modal = document.createElement("div");
+  let modalP = document.createElement("p");
+  let modalButton = document.createElement("button");
 
-    modalP.textContent = 
-    "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
-    modal.appendChild(modalP);
-    document.body.appendChild(modal);  
+  modalP.textContent =
+    "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user";
+  modal.appendChild(modalP);
+  document.body.appendChild(modal);
 }
 
 let btn = document.getElementById("btn");
